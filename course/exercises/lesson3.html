@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lesson3</title>
+  </head>
+  <body>
+    <script>
+      // 3a - 3c
+      let nameIs = 'My name is:';
+      console.log(nameIs);
+      const name  = 'Sushil';
+      nameIs = nameIs + name;
+      console.log(nameIs);
+
+      // 4a - 3f
+
+      // const cost = ((1*5)+(1*3));
+      // console.log(cost);
+      // console.log(`Totel cost: ${cost}`);
+      // const totalCost = 'Total cost: ';
+      // console.log(totalCost + cost);
+      //alert(totalCost + cost);
+      
+      //3g - 3j
+//       const cost = (((1*599)+(1*295)) / 100);
+//       totalCost = 'Total cost: ';
+//       console.log(totalCost + cost);
+//       alert(`Total cost: $${cost}
+// Thank you, come again!`);
+
+// 3k - 3n
+const itemtype = 2;
+ const item1Count = 2;
+ const item2Count = 2;
+ const shippingCharges = 4.99;
+const itemsCost = ((item1Count*2095)+(item2Count*799))/ 100;
+const beforTax = itemsCost + (itemtype * shippingCharges);
+const tax =  beforTax / 10;
+ const totalCost = beforTax + tax;
+console.log(`items (4):   $${itemsCost}
+Shipping & handling:   $${itemtype * shippingCharges}
+Total before tax: ${beforTax}
+Estimated tax(10%):   ${tax}
+Order total:   $${totalCost}`);
+
+
+    </script>
+  </body>
+</html>
