@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body style="padding-left: 20px">
+    <p>Youtube subscribe Button</p>
+    <button onclick="subscribe();" class="js-subscribe-button">
+      Subscribe
+    </button>
+
+    <p>Amaon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 Shipping.</p>
+    <p>Order over $40 = Free Shipping.</p>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="handelCostKeyDown(event)"
+    />
+    <button
+      onclick="
+    calculateTotal();
+    "
+    >
+      Calculate
+    </button>
+    <p class="total-cost"></p>
+    <script>
+
+      String(25)
+      console.log('25' - 5)
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let orderCost = Number(inputElement.value);
+        if (orderCost < 40) {
+          orderCost = orderCost + 10;
+        }
+        document.querySelector(".total-cost").innerHTML = `$${orderCost}`;
+      }
+
+      function handelCostKeyDown(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>

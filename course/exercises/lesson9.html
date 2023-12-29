@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lesson9</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-button">9b</button>
+    <button onclick="updatemove('heads');" class="js-heads-button">Heads</button>
+    <button onclick="updatemove('tails');" class="js-tails-button">Tails</button>
+    <p class="result"></p>
+
+    <input type="text" placeholder="Enter your name" class="js-input" onkeydown="handelKeyUpdates(event);">
+    <button onclick="displayName();" class="js-submite">Submit</button>
+    <p class="your-name"></p>
+    <script>
+      // lesson a - b
+      console.log(document.querySelector('button'));
+      document.querySelector('.js-button').innerHTML = '9A';
+      //lesson c
+      function updatemove(move){
+      document.querySelector('.result').innerHTML = `You chose: ${move}`;
+      }
+      //lesson d
+      function displayName(){
+        const nameElement = document.querySelector('.js-input');
+        const name = nameElement.value;
+        document.querySelector('.your-name').innerHTML = `Your name is: ${name}`;
+      }
+      function handelKeyUpdates(event){
+        if (event.key === 'Enter'){
+          displayName();
+        }
+      }
+    </script>
+  </body>
+</html>
