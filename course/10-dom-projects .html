@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+    <style>
+      .js-subscribe-button{
+        color: white;
+        background-color: black;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+        font-family: arial;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .is-subscribed{
+        background-color: rgb(241, 241, 241);
+        color: black;
+      }
+      .js-cost-input{
+        padding: 10px 10px;
+        width: 200px;
+        font-size: 15px;
+      }
+      .calculate{
+        font-size: 15px;
+        padding: 12px 15px;
+        background-color: green;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body style="padding-left: 20px">
+    <p>Youtube subscribe Button</p>
+    <button onclick="subscribe();" class="js-subscribe-button">
+      Subscribe
+    </button>
+
+    <p>Amaon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 Shipping.</p>
+    <p>Order over $40 = Free Shipping.</p>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="handelCostKeyDown(event)"
+    />
+    <button
+      onclick="
+    calculateTotal();
+    " class="calculate"
+    >
+      Calculate
+    </button>
+    <p class="total-cost"></p>
+    <script src="javascript/10-dom-projects .js"></script>
+  </body>
+</html>

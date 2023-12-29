@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Boolean</title>
-  </head>
-  <body>
-    
-    <script>
-      console.log(3 > 4);
+console.log(3 > 4);
       console.log(typeof true);
       console.log(5 == "5");//the == changes the type to same type.
       console.log(5 === "5"); // use === if we don't want the type to change.
@@ -27,6 +19,3 @@
        console.log("Almost there!");
        else
         console.log("You can not Drive");
-    </script>
-  </body>
-</html>

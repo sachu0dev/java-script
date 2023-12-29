@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>DOM</title>
-  </head>
-  <body>
-    <button>hello</button>
-    <button class="js-button">second butoon</button>
-    <script>
-      console.log(document.querySelector('button').innerHTML);
+console.log(document.querySelector('button').innerHTML);
       document.querySelector('button')
         .innerHTML = 'changed';
 
@@ -25,6 +16,3 @@
      console.log(document.body.innerHTML);
      document.body.innerHTML = '<button>good job!<button>';
       */
-    </script>
-  </body>
-</html>

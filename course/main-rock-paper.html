@@ -2,22 +2,39 @@
 <html>
   <head>
     <style>
-      
+      body {
+        background-color: rgb(24, 24, 24);
+        color: white;
+        font-family: arial;
+      }
+      .heading{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .emojis{
+        height: 50px;
+        object-fit: cover;
+      }
+      .move-button{
+        background-color: transparent;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        margin-right: 10px;
+      }
+
     </style>
-    <title>rock paper scissor</title>
   </head>
   <body>
-    <p>Rock Paper Scissors</p>
+    <p class="heading">Rock Paper Scissors</p>
     <div>
-      <button onclick="game('Rock');">Rock</button>
-    <button onclick="game('Paper');">paper</button>
-    <button onclick="game('Scissors');">Scissors</button>
+      <button onclick="game('Rock');" class="move-button"><img class="emojis" src="rock-emoji.png"></button>
+    <button onclick="game('Paper');" class="move-button"><img class="emojis"  src="paper-emoji.png"></button>
+    <button onclick="game('Scissors');" class="move-button"><img class="emojis"  src="scissors-emoji.png"></button>
     </div>
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
     <div>
-      <button onclick="resetScore(); updateScoreElement();">Reset Score</button>
+      <button onclick="resetScore();">Reset Score</button>
     </div>
     
 
@@ -27,15 +44,7 @@
           losses: 0,
           ties: 0
         };
-
-      updateMovestElement();
-      updateScoreElement();
-      updateResultElement();
-      function updateScoreElement(){
-        document.querySelector('.js-score')
-        .innerHTML = `Wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`; 
-      }
-
+      console.log();
       function resetScore(){
         score.wins = 0;
         score.losses = 0;
@@ -66,19 +75,10 @@
           result = 'You lose.'
         }
         localStorage.setItem('score', JSON.stringify(score));
-        document.querySelector('.js-score')
-        updateMovesElement();
-        updateScoreElement();
-        updateResultElement();
-        function updateResultElement(){
-        document.querySelector('.js-result').innerHTML = result;
+        alert(`You picked ${userMove}. computer picked ${computerMove}: ${result}
+Wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`);
       }
 
-      function updateMovesElement(){
-        document.querySelector('.js-moves')
-          .innerHTML = `You picked ${userMove}. computer picked ${computerMove}: ${result}`;
-      }
-      }
     </script>
   </body>
 </html>
