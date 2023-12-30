@@ -66,13 +66,46 @@ function countPositive(array){
   }
   return count;
 }
+let arr = [3 , 3];
+console.log(minMax(arr));
+function minMax(nums){
 
-const loopArray = [1 , -3, 5];
+  const result ={
+    min: nums[0],
+    max: nums[0]
+  };
 
-function minMax(array){
-  let obj = {
-    min: 0,
-    max: 0
+  for(let i = 0; i < nums.length; i ++){
+    const value = nums[i];
+
+    if (value < result.min){
+      result.min = value;
+    }
+
+    if (value > result.max){
+      result.max = value;
+    }
   }
-  for(let i = )
+  return result;
+}
+
+
+const fruits = ['apple', 'grape', 'apple', 'apple'];
+console.log(countWord(fruits));
+
+function countWord(fruits){
+
+  const fruitsCount = {
+    apple: 0,
+    grape: 0
+  }
+  for(let i = 0; i < fruits.length; i++){
+    if (fruits[i] === 'apple'){
+      fruitsCount.apple += 1;
+    }
+    if(fruits[i] === 'grape'){
+      fruitsCount.grape += 1;
+    }
+  }
+  return fruitsCount;
 }
