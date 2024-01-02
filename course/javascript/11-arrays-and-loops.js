@@ -39,15 +39,41 @@
 //   console.log(todoList[i]);
 // }
 
-const nums = [1, 1, 3];
-let total = 0;
-for(let i = 0; i < nums.length; i++){
-  total += nums[i];
-}
-console.log(total);
+// const nums = [1, 1, 3];
+// let total = 0;
+// for(let i = 0; i < nums.length; i++){
+//   total += nums[i];
+// }
+// console.log(total);
 
-const numsDoubled = [];
-for(let i = 0; i < nums.length; i++){
-  numsDoubled.push(nums[i] * 2);
+// const numsDoubled = [];
+// for(let i = 0; i < nums.length; i++){
+//   numsDoubled.push(nums[i] * 2);
+// }
+// console.log(numsDoubled);
+
+let array1 = [1,2,3];
+let array2 = array1.slice();
+
+array2.push(4);
+console.log(array1);
+console.log(array2);
+
+const array3 = [1,2,3];
+const [a, b , c] = array3;
+console.log();
+
+
+for(let i = 1; i <= 10; i++){
+  console.log(i);
+  if(i === 8)
+  break;
 }
-console.log(numsDoubled);
+
+for(let i = 1; i <= 10; i++){
+  if(i % 3 === 0){
+    continue;
+  }
+  console.log(i);
+}
+
