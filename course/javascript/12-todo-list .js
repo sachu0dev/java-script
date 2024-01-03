@@ -5,16 +5,27 @@ renderTodoList();
 function renderTodoList() {
   let todoListHTML = '';
 
-  for (let i = todoList.length - 1; i >= 0; i--) {
-    const todoObject = todoList[i];
+
+  todoList.forEach(function(todoObject, index){
     const { name, dueDate } = todoObject;
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button onclick="deleteTodo(event, ${i})" class="delete-todo-button">Delete</button>
+      <button onclick="deleteTodo(event, ${index})" class="delete-todo-button">Delete</button>
     `;
     todoListHTML += html;
-  }
+  });
+
+  // for (let i = todoList.length - 1; i >= 0; i--) {
+  //   const todoObject = todoList[i];
+  //   const { name, dueDate } = todoObject;
+  //   const html = `
+  //     <div>${name}</div>
+  //     <div>${dueDate}</div>
+  //     <button onclick="deleteTodo(event, ${i})" class="delete-todo-button">Delete</button>
+  //   `;
+  //   todoListHTML += html;
+  // }
 
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
