@@ -20,16 +20,46 @@ let intervelId;
 
 function autoplay(){
   if ( !isAutoPlaying){
-    intervelId = setInterval(function(){
+    intervelId = setInterval(() => {
       const playerMove = pickComputerMove()
       playGame(playerMove);
-    }, 2000);
+      let autoplayElement = document.querySelector('.auto-play-button');
+      autoplayElement.textContent = 'Stop Auto Play';
+    }, 1500);
     isAutoPlaying = true;
   } else {
     clearInterval(intervelId);
+    let autoplayElement = document.querySelector('.auto-play-button');
+      autoplayElement.textContent = 'Auto Play';
     isAutoPlaying = false;
   }
 }
+
+  document.querySelector('.js-rock-button')
+    .addEventListener('click', () => {
+  playGame('rock');
+    });
+
+  document.querySelector('.js-paper-button')
+  .addEventListener('click', () => {
+playGame('paper');
+  });
+
+  document.querySelector('.js-scissors-button')
+  .addEventListener('click', () => {
+playGame('scissors');
+  });
+
+
+  document.body.addEventListener('keydown', (event) =>{
+    if (event.key === 'r' || event.key === 'R'){
+      playGame('rock');
+    } else if (event.key === 'p' || event.key === 'P'){
+      playGame('paper');
+    } else if (event.key === 's' || event.key === 'S'){
+      playGame('scissors')
+    }
+  });
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
